@@ -4,141 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>生活分享小天地</title>
-    <!-- 引入 Tailwind CSS 來快速設定漂亮且適合長者的樣式 -->
+    <!-- 引入 Tailwind CSS 來進行快速且美觀的排版 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google 字體以增加閱讀舒適度 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* 稍微加粗網頁整體字體，讓長者更容易看清楚 */
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft JhengHei', sans-serif;
-            letter-spacing: 0.05em;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FDF8F5; /* 溫暖柔和的背景色 */
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
     </style>
 </head>
-<!-- 背景使用溫暖的淺米黃色，保護眼睛且溫馨 -->
-<body class="bg-[#FFF9F2] text-gray-800">
+<body class="text-gray-800 pb-20">
 
     <!-- 第一部分：上半部 Hello Image 歡迎區 -->
-    <header class="relative h-[350px] md:h-[450px] flex items-center justify-center overflow-hidden shadow-lg">
-        <!-- 歡迎區的背景大圖片 (目前使用一張代表開心、朋友相聚的免費圖片) -->
-        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop" 
-             alt="朋友們開心的合照" 
-             class="absolute inset-0 w-full h-full object-cover z-0">
-             
-        <!-- 加上一層半透明的黑色遮罩，讓上面的白色文字更清楚 -->
-        <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+    <!-- 這裡放了一張開心、朋友相聚感覺的圖片 -->
+    <header class="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center bg-gray-900">
+        <!-- 圖片來源：Unsplash (開心相聚的意象)，加上暗色遮罩讓文字更清楚 -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-70"></div>
         
-        <!-- 歡迎文字 -->
-        <div class="relative z-20 text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-md">分享你的生活</h1>
-            <p class="text-2xl md:text-3xl text-white font-medium drop-shadow-md">願每一個人都快樂</p>
+        <!-- 網站名稱與歡迎標語 -->
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 text-shadow tracking-widest">
+                生活分享小天地
+            </h1>
+            <p class="text-3xl md:text-5xl font-bold text-white text-shadow leading-relaxed">
+                分享你的生活<br>願每一個人都快樂
+            </p>
         </div>
     </header>
 
     <!-- 第二部分：下半部資料分享區 -->
-    <!-- 這裡限制了網頁的最大寬度，並將內容置中，讓版面看起來整齊 -->
-    <main class="max-w-4xl mx-auto px-5 py-12">
+    <main class="max-w-4xl mx-auto mt-12 px-5">
 
-        <!-- ========================================== -->
-        <!-- 📌 A. 文件分享區 -->
-        <!-- ========================================== -->
-        <section class="mb-14">
-            <h2 class="text-3xl font-bold text-[#8B5E3C] mb-6 border-b-4 border-orange-300 pb-3 flex items-center">
-                <span class="mr-3 text-4xl">📄</span> 文件分享
+        <p class="text-2xl text-center text-gray-600 mb-12 font-bold">
+            歡迎來到這裡！請點擊下方的按鈕來觀看或下載分享的內容喔。
+        </p>
+
+        <!-- ========================================================================= -->
+        <!-- 🎯 【A. 文件分享區】 -->
+        <!-- ========================================================================= -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-amber-800 border-b-4 border-amber-300 pb-3 mb-6 flex items-center gap-3">
+                <span>📁</span> 文件分享
             </h2>
 
-            <!-- 💡💡💡 【修改區域：在這裡新增/修改 文件】 💡💡💡 -->
-            <!-- 如果要新增第二個文件，請把下方 <div class="bg-white..."> 到 </div> 的整塊程式碼複製，貼在它的下面 -->
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-8 border-blue-500 mb-6 transition-transform hover:-translate-y-1">
-                <div class="mb-5">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xl px-4 py-1 rounded-full font-bold mb-3">文件</span>
-                    <!-- 在這裡修改文件名稱 -->
-                    <h3 class="text-3xl font-bold text-gray-800">測試閱讀文件</h3>
-                    <p class="text-xl text-gray-600 mt-2">這是一份分享的文件，點擊下方按鈕即可閱讀或下載。</p>
+            <!-- 
+            ==================================================
+            📍 👇👇👇 如果要【新增文件】，請複製下面這個框框 👇👇👇 
+            ==================================================
+            -->
+            <div class="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                <!-- 資料名稱 -->
+                <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">測試閱讀文件 (PDF)</h3>
+                    <p class="text-lg text-gray-500 mt-2">這是一份分享給您的閱讀資料</p>
                 </div>
-                <!-- 按鈕區域 -->
-                <div class="flex flex-col sm:flex-row gap-4 mt-6">
-                    <!-- 在 href="裡面填寫您的檔名" -->
-                    <a href="readtest.pdf" target="_blank" class="flex-1 text-center bg-blue-500 hover:bg-blue-600 text-white text-2xl font-bold py-4 px-6 rounded-xl shadow-md transition-colors">
-                        👁️ 打開文件
+                <!-- 按鈕區 -->
+                <div class="flex flex-col sm:flex-row w-full md:w-auto gap-4">
+                    <!-- 打開文件按鈕 -->
+                    <a href="./readtest.pdf" target="_blank" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200">
+                        打開文件
                     </a>
-                    <!-- download 屬性可以讓瀏覽器直接下載該檔案 -->
-                    <a href="readtest.pdf" download class="flex-1 text-center bg-[#F3F4F6] hover:bg-[#E5E7EB] text-gray-800 text-2xl font-bold py-4 px-6 rounded-xl shadow-md transition-colors border-2 border-gray-200">
-                        ⬇️ 下載文件
+                    <!-- 下載文件按鈕 -->
+                    <a href="./readtest.pdf" download class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200">
+                        下載文件
                     </a>
                 </div>
             </div>
-            <!-- 💡💡💡 【文件區塊結束】 💡💡💡 -->
+            <!-- 
+            ==================================================
+            📍 👆👆👆 【新增文件】的框框到此結束 👆👆👆
+            ==================================================
+            -->
+
+            <!-- 
+            ==================================================
+            📍 👇👇👇 這是新增的【PowerPoint 簡報】框框 👇👇👇 
+            ==================================================
+            -->
+            <div class="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                <!-- 資料名稱 -->
+                <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">活動分享簡報 (PowerPoint)</h3>
+                    <p class="text-lg text-gray-500 mt-2">這是一份可以下載觀看的 PowerPoint 簡報檔案</p>
+                </div>
+                <!-- 按鈕區 -->
+                <div class="flex flex-col sm:flex-row w-full md:w-auto gap-4">
+                    <!-- 打開簡報按鈕 -->
+                    <a href="./sample.pptx" target="_blank" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200">
+                        打開簡報
+                    </a>
+                    <!-- 下載簡報按鈕 -->
+                    <a href="./sample.pptx" download class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200">
+                        下載簡報
+                    </a>
+                </div>
+            </div>
+            <!-- 
+            ==================================================
+            📍 👆👆👆 【PowerPoint 簡報】的框框到此結束 👆👆👆
+            ==================================================
+            -->
 
         </section>
 
-        <!-- ========================================== -->
-        <!-- 📌 B. YouTube 影片分享區 -->
-        <!-- ========================================== -->
-        <section class="mb-14">
-            <h2 class="text-3xl font-bold text-[#8B5E3C] mb-6 border-b-4 border-red-300 pb-3 flex items-center">
-                <span class="mr-3 text-4xl">🎬</span> 影片分享
+
+        <!-- ========================================================================= -->
+        <!-- 🎯 【B. YouTube 影片分享區】 -->
+        <!-- ========================================================================= -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-red-700 border-b-4 border-red-300 pb-3 mb-6 flex items-center gap-3">
+                <span>▶️</span> YouTube 影片分享
             </h2>
 
-            <!-- 💡💡💡 【修改區域：在這裡新增/修改 YouTube 影片】 💡💡💡 -->
-            <!-- 如果要新增第二段影片，請把下方 <div class="bg-white..."> 到 </div> 的整塊程式碼複製，貼在它的下面 -->
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-8 border-red-500 mb-6 transition-transform hover:-translate-y-1">
-                <div class="mb-5">
-                    <span class="inline-block bg-red-100 text-red-800 text-xl px-4 py-1 rounded-full font-bold mb-3">YouTube 影片</span>
-                    <!-- 在這裡修改影片名稱 -->
-                    <h3 class="text-3xl font-bold text-gray-800">生活點滴：精彩影片分享</h3>
-                    <p class="text-xl text-gray-600 mt-2">點擊下方大按鈕，將會開啟 YouTube 播放這段影片。</p>
+            <!-- 
+            ==================================================
+            📍 👇👇👇 如果要【新增 YouTube 影片】，請複製這個框框 👇👇👇 
+            ==================================================
+            -->
+            <div class="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                <!-- 資料名稱 -->
+                <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">生活點滴紀錄影片</h3>
+                    <p class="text-lg text-gray-500 mt-2">點擊右方按鈕即可前往 YouTube 觀看</p>
                 </div>
-                <!-- 按鈕區域 -->
-                <div class="mt-6">
-                    <!-- 在 href="裡面填寫YouTube連結" -->
-                    <a href="https://youtu.be/h64ye-PvF2Y?si=cPuKy6j_rHAC5FGT" target="_blank" class="block w-full text-center bg-red-500 hover:bg-red-600 text-white text-2xl font-bold py-4 px-6 rounded-xl shadow-md transition-colors">
-                        ▶️ 觀看 YouTube
+                <!-- 按鈕區 -->
+                <div class="flex flex-col sm:flex-row w-full md:w-auto gap-4">
+                    <!-- 觀看 YouTube 按鈕 (放上您提供的連結) -->
+                    <a href="https://youtu.be/h64ye-PvF2Y?si=cPuKy6j_rHAC5FGT" target="_blank" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200 flex items-center justify-center gap-2">
+                        觀看 YouTube
                     </a>
                 </div>
             </div>
-            <!-- 💡💡💡 【YouTube 影片區塊結束】 💡💡💡 -->
+            <!-- 
+            ==================================================
+            📍 👆👆👆 【新增 YouTube 影片】的框框到此結束 👆👆👆
+            ==================================================
+            -->
 
         </section>
 
-        <!-- ========================================== -->
-        <!-- 📌 C. 相片分享區 -->
-        <!-- ========================================== -->
-        <section class="mb-10">
-            <h2 class="text-3xl font-bold text-[#8B5E3C] mb-6 border-b-4 border-green-300 pb-3 flex items-center">
-                <span class="mr-3 text-4xl">🖼️</span> 相片分享
+
+        <!-- ========================================================================= -->
+        <!-- 🎯 【C. 相片分享區】 -->
+        <!-- ========================================================================= -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 border-b-4 border-teal-300 pb-3 mb-6 flex items-center gap-3">
+                <span>🖼️</span> 相片分享
             </h2>
 
-            <!-- 💡💡💡 【修改區域：在這裡新增/修改 相片】 💡💡💡 -->
-            <!-- 如果要新增第二張相片，請把下方 <div class="bg-white..."> 到 </div> 的整塊程式碼複製，貼在它的下面 -->
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-8 border-green-500 mb-6 transition-transform hover:-translate-y-1">
-                <div class="mb-5">
-                    <span class="inline-block bg-green-100 text-green-800 text-xl px-4 py-1 rounded-full font-bold mb-3">相片</span>
-                    <!-- 在這裡修改相片名稱 -->
-                    <h3 class="text-3xl font-bold text-gray-800">我們的合照與回憶</h3>
-                    <p class="text-xl text-gray-600 mt-2">記錄美好的瞬間，您可以直接觀看或下載保存到手機/電腦中。</p>
+            <!-- 
+            ==================================================
+            📍 👇👇👇 如果要【新增相片】，請複製下面這個框框 👇👇👇 
+            ==================================================
+            -->
+            <div class="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                <!-- 資料名稱 -->
+                <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">生活精選相片</h3>
+                    <p class="text-lg text-gray-500 mt-2">這是一張值得紀念的照片</p>
                 </div>
-                <!-- 按鈕區域 -->
-                <div class="flex flex-col sm:flex-row gap-4 mt-6">
-                    <!-- 在 href="裡面填寫您的相片檔名" -->
-                    <a href="sample-photo.jpeg" target="_blank" class="flex-1 text-center bg-green-500 hover:bg-green-600 text-white text-2xl font-bold py-4 px-6 rounded-xl shadow-md transition-colors">
-                        👁️ 觀看相片
+                <!-- 按鈕區 -->
+                <div class="flex flex-col sm:flex-row w-full md:w-auto gap-4">
+                    <!-- 觀看相片按鈕 -->
+                    <a href="./sample-photo.jpeg" target="_blank" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200">
+                        觀看相片
                     </a>
-                    <!-- download 屬性可以讓瀏覽器直接下載該檔案 -->
-                    <a href="sample-photo.jpeg" download class="flex-1 text-center bg-[#F3F4F6] hover:bg-[#E5E7EB] text-gray-800 text-2xl font-bold py-4 px-6 rounded-xl shadow-md transition-colors border-2 border-gray-200">
-                        ⬇️ 下載相片
+                    <!-- 下載相片按鈕 -->
+                    <a href="./sample-photo.jpeg" download class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-2xl font-bold py-4 px-8 rounded-xl shadow-md text-center transition duration-200">
+                        下載相片
                     </a>
                 </div>
             </div>
-            <!-- 💡💡💡 【相片區塊結束】 💡💡💡 -->
+            <!-- 
+            ==================================================
+            📍 👆👆👆 【新增相片】的框框到此結束 👆👆👆
+            ==================================================
+            -->
 
         </section>
 
     </main>
 
-    <!-- 網頁底部的版權/結語宣告 -->
-    <footer class="bg-[#8B5E3C] text-white text-center py-10 mt-8">
-        <p class="text-2xl font-medium tracking-wide">生活分享小天地</p>
-        <p class="text-lg mt-2 opacity-80">為分享而生，願大家平安喜樂</p>
+    <!-- 頁尾 -->
+    <footer class="text-center text-gray-500 mt-12 text-lg">
+        <p>生活分享小天地 © 願每一天都充滿歡笑</p>
     </footer>
 
 </body>
